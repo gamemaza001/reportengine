@@ -25,6 +25,11 @@ public class ReportController {
     @Autowired
     private ReportService reportService;
 
+    @GetMapping("/hello")
+    public String helloWord() {
+        return "Hello World";
+    }
+
     @GetMapping("/rpt04004-download/{id}")
     public void personJasperById(HttpServletResponse response, @PathVariable String id)
             throws IOException, JRException, SQLException {
