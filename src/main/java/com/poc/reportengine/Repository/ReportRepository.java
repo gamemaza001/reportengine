@@ -6,14 +6,11 @@ import lombok.extern.slf4j.Slf4j;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.*;
 
@@ -21,15 +18,15 @@ import java.util.*;
 @Repository
 public class ReportRepository {
 
-    @Autowired
-    @Qualifier("jdbcTemplate")
-    private JdbcTemplate jdbcTemplate;
+//    @Autowired
+//    @Qualifier("jdbcTemplate")
+//    private JdbcTemplate jdbcTemplate;
 
     @Autowired
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     public JasperPrint exportPdfFile(Integer id) throws SQLException, JRException, IOException {
-        Connection conn = jdbcTemplate.getDataSource().getConnection();
+        //Connection conn = jdbcTemplate.getDataSource().getConnection();
         //String path = resourceLoader.getResource("classpath:PersonTest.jrxml").getURI().getPath();
         ClassPathResource cpr = new ClassPathResource("RPT_04004_PDF.jrxml");
         ClassPathResource cprLogo = new ClassPathResource("Horizontail-Banner.png");
