@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RPT_04004_PDF" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="842" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="63cdeffd-8894-415f-a01a-6143e9bac864">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DBBackend"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select * from report_data limit 1]]>
+	</queryString>
+	<field name="rpt_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="rpt_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="report_data"/>
+	</field>
+	<field name="rpt_account_no" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="rpt_account_no"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="report_data"/>
+	</field>
+	<field name="rpt_account_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="rpt_account_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="report_data"/>
+	</field>
+	<field name="rpt_amount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="rpt_amount"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="report_data"/>
+	</field>
+	<field name="rpt_status" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="rpt_status"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="report_data"/>
+	</field>
+	<field name="rpt_create_date" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="rpt_create_date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="report_data"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="228" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="842" height="38" uuid="6ac9e0ca-b87a-40cf-a066-9856e8852997">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="17" y="54" width="162" height="30" uuid="d4180f87-22cb-4465-ac11-13dd3fb23f82">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="TH Sarabun New" size="22" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["รายงานการอายัดเช็ค"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="17" y="78" width="146" height="16" forecolor="#4B4B4B" uuid="599aee84-284b-4b52-b83b-0b843a62a737">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="sukhumvit" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Stop Cheques History"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="620" y="54" width="79" height="17" uuid="c75f923e-4bfa-4b0a-a39d-725f711c1a13">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="TH Sarabun New" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["อัปเดตล่าสุดเมื่อ:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="620" y="68" width="60" height="13" forecolor="#4B4B4B" uuid="aca6e438-4910-4927-9acf-9dc35a8c7586">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="sukhumvit" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Last Updated:"]]></textFieldExpression>
+			</textField>
+			<rectangle radius="5">
+				<reportElement mode="Opaque" x="613" y="133" width="212" height="40" backcolor="#C4C4C4" uuid="bd12a3b3-266c-43d6-a220-ae83ec1d6689">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement x="613" y="101" width="212" height="36" uuid="fa22b981-db8e-4730-b638-133aede8493a">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</rectangle>
+			<textField>
+				<reportElement mode="Opaque" x="613" y="120" width="212" height="17" forecolor="#4B4B4B" uuid="8656afbc-dbe8-454d-8bf0-50484a426b54">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="sukhumvit" size="8"/>
+					<paragraph lineSpacingSize="1.0" leftIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Stop Date"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="612" y="139" width="211" height="22" uuid="acfdb08e-3b5c-4127-a455-6e4c01724680">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="TH Sarabun New" size="16" isBold="true"/>
+					<paragraph leftIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["จำนวนรายการทั้งหมด:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="612" y="158" width="211" height="16" forecolor="#4B4B4B" uuid="38417016-b8f5-4cdb-af7b-80ee7f514e2f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="sukhumvit" size="8" isBold="false"/>
+					<paragraph leftIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Total Transactions Items"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="17" y="101" width="51" height="19" uuid="38b6ba5e-aecd-4323-bc9e-6bf93728e938">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="TH Sarabun New" size="14" isBold="true"/>
+					<paragraph leftIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ชื่อ:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="17" y="117" width="51" height="16" forecolor="#4B4B4B" uuid="954ce84f-546d-4f3a-81bb-76e8ae68eae2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="sukhumvit" size="8" isBold="false"/>
+					<paragraph leftIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Name"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="17" y="140" width="51" height="19" uuid="48213803-2edc-42e6-8669-4ffd6b32980f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="TH Sarabun New" size="14" isBold="true"/>
+					<paragraph leftIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ชื่อบัญชี:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="17" y="156" width="51" height="16" forecolor="#4B4B4B" uuid="97c9d3d4-d3cd-4901-9ce1-7c11d4f50161">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="sukhumvit" size="8" isBold="false"/>
+					<paragraph leftIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account Name"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="17" y="195" width="51" height="16" forecolor="#4B4B4B" uuid="f9cc9460-96b9-43e5-bd74-8bbf3e936c49">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="sukhumvit" size="8" isBold="false"/>
+					<paragraph leftIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account No."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="17" y="179" width="51" height="19" uuid="32943f71-f5ae-4c88-952c-dc93001574b3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="TH Sarabun New" size="14" isBold="true"/>
+					<paragraph leftIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["เลขที่บัญชี:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="292" y="101" width="100" height="19" uuid="8e086842-603b-417c-89e8-c90dfa00f193">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="TH Sarabun New" size="14" isBold="true"/>
+					<paragraph leftIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ชื่อบริษัท/หน่วยงาน:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="292" y="117" width="100" height="16" forecolor="#4B4B4B" uuid="59238265-eb43-486c-9357-fcf25f437114">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="sukhumvit" size="8" isBold="false"/>
+					<paragraph leftIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Company/Sub-Entity Name"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="292" y="140" width="100" height="19" uuid="14110b10-871a-4552-abc6-0480f2ab6e69">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="TH Sarabun New" size="14" isBold="true"/>
+					<paragraph leftIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ชื่อผลิตภัณฑ์:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="292" y="156" width="100" height="16" forecolor="#4B4B4B" uuid="97de8d50-fa26-402d-81ab-9c9253ad2613">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="sukhumvit" size="8" isBold="false"/>
+					<paragraph leftIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Product Name"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="292" y="195" width="100" height="16" forecolor="#4B4B4B" uuid="0879a6d2-4e4a-480f-8266-18eee817c4cb">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="sukhumvit" size="8" isBold="false"/>
+					<paragraph leftIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Status"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="292" y="179" width="100" height="19" uuid="957517fe-b768-4371-9dbe-e26b03616fcf">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="TH Sarabun New" size="14" isBold="true"/>
+					<paragraph leftIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["สถานะ:"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="226" width="842" height="1" uuid="e9d3689d-a128-4626-94b7-da507a2d18a3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="2.0" lineColor="#DCDDDD"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement mode="Transparent" x="613" y="105" width="211" height="17" uuid="f56a5bee-2faa-4e3c-b763-df2de048c57e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="TH Sarabun New" size="12" isBold="true"/>
+					<paragraph leftIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["วันที่อายัด:"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="63" splitType="Stretch">
+			<rectangle radius="5">
+				<reportElement x="16" y="18" width="809" height="33" backcolor="#DCDDDD" uuid="b8331237-9799-488b-a1e4-7ea9a4b9d592">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</rectangle>
+			<textField>
+				<reportElement mode="Opaque" x="16" y="36" width="115" height="16" forecolor="#4B4B4B" backcolor="#DCDDDD" uuid="562e9f98-ac7f-4c8b-a389-60ede45a8e44">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="sukhumvit" size="8"/>
+					<paragraph leftIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="16" y="24" width="115" height="16" backcolor="#DCDDDD" uuid="d2ac40f2-5b46-47b0-b5fa-6e352523c408">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.8"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="12" isBold="true"/>
+					<paragraph leftIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["เลขที่"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="130" y="36" width="115" height="16" forecolor="#4B4B4B" backcolor="#DCDDDD" uuid="77360568-bade-4d0f-9457-9ae567c49774">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="sukhumvit" size="8"/>
+					<paragraph leftIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="130" y="24" width="115" height="16" backcolor="#DCDDDD" uuid="b36da7cd-b3e6-4f26-b163-101d61e27d5a">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="12" isBold="true"/>
+					<paragraph leftIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["เลขที่"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="245" y="24" width="115" height="16" backcolor="#DCDDDD" uuid="71effe39-9f17-4e69-8495-06aaa028fcd2">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="12" isBold="true"/>
+					<paragraph leftIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["เลขที่"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="245" y="36" width="115" height="16" forecolor="#4B4B4B" backcolor="#DCDDDD" uuid="b294c24b-2298-41dd-bffc-2e8187446851">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="sukhumvit" size="8"/>
+					<paragraph leftIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="360" y="36" width="115" height="16" forecolor="#4B4B4B" backcolor="#DCDDDD" uuid="49be58b1-220c-4a0e-bcfe-74cfc914d55d">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="sukhumvit" size="8"/>
+					<paragraph leftIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="360" y="24" width="115" height="16" backcolor="#DCDDDD" uuid="0d910068-1a71-44d1-a6e4-1bcf86dc056b">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="12" isBold="true"/>
+					<paragraph leftIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["เลขที่"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="475" y="36" width="115" height="16" forecolor="#4B4B4B" backcolor="#DCDDDD" uuid="b617fd72-31d2-4755-bd28-2a2d8915e1f5">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="sukhumvit" size="8"/>
+					<paragraph leftIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="475" y="24" width="115" height="16" backcolor="#DCDDDD" uuid="4771070f-43b6-49a8-9023-f70851ff2670">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="12" isBold="true"/>
+					<paragraph leftIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["เลขที่"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="590" y="36" width="115" height="16" forecolor="#4B4B4B" backcolor="#DCDDDD" uuid="ee2b052d-b5d9-4a98-a0ee-3a9d41cd057a">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="sukhumvit" size="8"/>
+					<paragraph leftIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="590" y="24" width="115" height="16" backcolor="#DCDDDD" uuid="2b3dc7e5-0ecc-40e1-a6e1-ef8ef5b1ae6d">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="12" isBold="true"/>
+					<paragraph leftIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["เลขที่"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="705" y="36" width="120" height="16" forecolor="#4B4B4B" backcolor="#DCDDDD" uuid="2a21d9bb-f39e-4625-8ab1-1cfd55fed031">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="sukhumvit" size="8"/>
+					<paragraph leftIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="705" y="24" width="118" height="16" backcolor="#DCDDDD" uuid="2caecb57-25d1-4d5c-83c4-1bb62f13d93c">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="12" isBold="true"/>
+					<paragraph leftIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["เลขที่"]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="63" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="136" splitType="Stretch">
+			<line>
+				<reportElement x="1" y="77" width="842" height="1" uuid="680af94c-95df-4534-97db-bc877cf44dcc">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#DCDDDD"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="687" y="84" width="100" height="30" uuid="d144d666-0ee1-4472-b784-00b0c1a5f01b"/>
+				<textElement textAlignment="Right">
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["หน้าที่ (Page) "]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="816" y="84" width="10" height="30" uuid="d642618e-586c-448c-babb-8604feadd4dc">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="sukhumvit" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="794" y="84" width="11" height="30" uuid="cdbd7e9a-74c1-46b5-b735-4fb24dba0d39">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="sukhumvit" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="805" y="84" width="9" height="30" uuid="a7f3b5a4-f0e4-4f20-b97d-1caad5507c27">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="sukhumvit" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["/"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="16" y="84" width="624" height="30" uuid="732e5150-aa97-4613-accc-0db5d9b74465"/>
+				<textElement>
+					<font fontName="TH Sarabun New"/>
+				</textElement>
+				<textFieldExpression><![CDATA["เอกสารนี้ไม่จำเป็นต้องมีลายเซ็นของผู้มีอำนาจของธนาคารเนื่องจากจัดพิมพ์ผ่านระบบคอมพิวเตอร์ หากต้องการสอบถามข้อมูลเพิ่มเติม กรุณาติดต่อศูนย์บริการลูกค้าธุรกิจ โทร. 02-722-2222 (This document is computer-" + "\n" + "generated and does not require the signature of SCB's authorized person. For more information, please call our Contact Center at 02-722-2222.)"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
