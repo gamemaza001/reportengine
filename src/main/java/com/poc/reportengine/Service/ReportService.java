@@ -24,7 +24,7 @@ public class ReportService {
     @Autowired
     private ReportRepository reportRepository;
 
-    public void exportPdfFile(String id, OutputStream outputStream) throws SQLException, JRException, IOException {
+    public void exportPdfFile(Integer id, OutputStream outputStream) throws SQLException, JRException, IOException {
         JasperPrint jasperPrint = reportRepository.exportPdfFile(id);
         JasperExportManager.exportReportToPdfStream(jasperPrint, outputStream);
         //File pdf = File.createTempFile("test2.", ".pdf");

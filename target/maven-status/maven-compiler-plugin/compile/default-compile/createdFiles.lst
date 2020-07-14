@@ -1,4 +1,6 @@
 com/poc/reportengine/Service/ReportService.class
+com/poc/reportengine/Repository/Mapper/Rpt04004Mapper.class
 com/poc/reportengine/ReportengineApplication.class
+com/poc/reportengine/Model/Rpt04004.class
 com/poc/reportengine/Repository/ReportRepository.class
 com/poc/reportengine/Controller/ReportController.class

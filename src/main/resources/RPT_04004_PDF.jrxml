@@ -6,31 +6,10 @@
 	<queryString language="SQL">
 		<![CDATA[]]>
 	</queryString>
-	<field name="rpt_id" class="java.lang.Integer">
-		<property name="com.jaspersoft.studio.field.label" value="rpt_id"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="report_data"/>
-	</field>
-	<field name="rpt_account_no" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="rpt_account_no"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="report_data"/>
-	</field>
-	<field name="rpt_account_name" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="rpt_account_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="report_data"/>
-	</field>
-	<field name="rpt_amount" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.label" value="rpt_amount"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="report_data"/>
-	</field>
-	<field name="rpt_status" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="rpt_status"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="report_data"/>
-	</field>
-	<field name="rpt_create_date" class="java.sql.Timestamp">
-		<property name="com.jaspersoft.studio.field.label" value="rpt_create_date"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="report_data"/>
-	</field>
-	<field name="testObj" class="java.lang.String"/>
+	<field name="rpt_id" class="java.lang.String"/>
+	<field name="rpt_account_name" class="java.lang.String"/>
+	<field name="rpt_account_no" class="java.lang.String"/>
+	<field name="rpt_status" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -292,6 +271,22 @@
 				</textElement>
 				<textFieldExpression><![CDATA["วันที่อายัด:"]]></textFieldExpression>
 			</textField>
+			<textField>
+				<reportElement x="70" y="101" width="100" height="30" uuid="70f55796-ddc5-457c-b791-be5b277805d2"/>
+				<textFieldExpression><![CDATA[$F{rpt_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="140" width="100" height="30" uuid="c7fa30be-e0e9-4b01-a359-9d58ae9baeba"/>
+				<textFieldExpression><![CDATA[$F{rpt_account_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="180" width="100" height="30" uuid="875c9300-b13a-4c18-b9bc-6c118166370f"/>
+				<textFieldExpression><![CDATA[$F{rpt_account_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="392" y="180" width="100" height="30" uuid="7227307b-de4c-4ab4-b842-60b368639d79"/>
+				<textFieldExpression><![CDATA[$F{rpt_status}]]></textFieldExpression>
+			</textField>
 		</band>
 	</pageHeader>
 	<columnHeader>
@@ -536,14 +531,7 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="63" splitType="Stretch">
-			<textField>
-				<reportElement x="17" y="10" width="100" height="30" uuid="13bb997d-2a60-4c3a-b81f-4686c6465fc5">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="71c4e1d3-d9e5-4525-b706-3e08d35e1043"/>
-				</reportElement>
-				<textFieldExpression><![CDATA[$F{testObj}]]></textFieldExpression>
-			</textField>
-		</band>
+		<band height="63" splitType="Stretch"/>
 	</detail>
 	<columnFooter>
 		<band height="45" splitType="Stretch"/>

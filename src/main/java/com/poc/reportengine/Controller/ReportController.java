@@ -31,7 +31,7 @@ public class ReportController {
     }
 
     @GetMapping("/rpt04004-download/{id}")
-    public void personJasperById(HttpServletResponse response, @PathVariable String id)
+    public void personJasperById(HttpServletResponse response, @PathVariable Integer id)
             throws IOException, JRException, SQLException {
         response.setContentType("application/x-download");
         response.setHeader("Content-Disposition", String.format("attachment; filename=\"RPT_04004.pdf\""));
@@ -40,7 +40,7 @@ public class ReportController {
     }
 
     @GetMapping("/rpt04004-view/{id}")
-    public void personJasperByIdView(HttpServletResponse response, @PathVariable String id)
+    public void personJasperByIdView(HttpServletResponse response, @PathVariable Integer id)
             throws IOException, JRException, SQLException {
         response.setContentType("application/pdf");
         response.setHeader("Content-Disposition", String.format("inline; filename=\"RPT_04004.pdf\""));
