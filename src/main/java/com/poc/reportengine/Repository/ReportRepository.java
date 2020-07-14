@@ -32,10 +32,10 @@ public class ReportRepository {
 
     public JasperPrint exportPdfFile(String id) throws SQLException, JRException, IOException {
         Connection conn = jdbcTemplate.getDataSource().getConnection();
+        //String path = resourceLoader.getResource("classpath:PersonTest.jrxml").getURI().getPath();
         ClassPathResource cpr = new ClassPathResource("RPT_04004_PDF.jrxml");
         ClassPathResource cprLogo = new ClassPathResource("Horizontail-Banner.png");
         JasperReport jasperReport = JasperCompileManager.compileReport(cpr.getInputStream());
-
         Map<String, Object> paramaters = new HashMap<String, Object>();
         paramaters.put("logo", cprLogo.getPath());
 
